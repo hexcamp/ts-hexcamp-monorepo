@@ -1,0 +1,17 @@
+{
+  "name": "ts-library-test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "rolldown -c rolldown.config.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "rolldown": "1.0.0-beta.19"
+  }
+}
