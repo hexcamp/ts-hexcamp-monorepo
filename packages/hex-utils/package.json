@@ -1,6 +1,6 @@
 {
   "name": "@hexcamp/hex-utils",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "type": "module",
@@ -9,7 +9,7 @@
     "test": "vitest"
   },
   "exports": {
-    ".": "./dist/hello.js"
+    ".": "./dist/hex.js"
   },
   "keywords": [],
   "author": "",
@@ -18,5 +18,9 @@
     "rolldown": "1.0.0-beta.19",
     "vitest": "^3.2.4"
   },
-  "packageManager": "pnpm@10.12.3"
+  "packageManager": "pnpm@10.12.3",
+  "dependencies": {
+    "base32.js": "^0.1.0",
+    "buffer": "^6.0.3"
+  }
 }

@@ -1,6 +1,6 @@
 {
-  "name": "ts-library-test",
-  "version": "1.0.0",
+  "name": "ts-hexcamp-monorepo",
+  "version": "0.0.1",
   "main": "index.js",
   "scripts": {
     "build": "pnpm -r --filter='./packages/**' run build",
@@ -9,7 +9,7 @@
   "type": "module",
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "description": "",
   "devDependencies": {
     "vitest": "^3.2.4"

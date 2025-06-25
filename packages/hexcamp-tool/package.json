@@ -1,9 +1,12 @@
 {
-  "name": "@jimpick/hello-main",
-  "version": "1.0.0",
-  "description": "",
+  "name": "hexcamp-tool",
+  "version": "0.0.1",
+  "description": "Small utils for working with Hex.Camp",
   "main": "index.js",
   "type": "module",
+  "bin": {
+    "hexcamp-tool": "src/main.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -1,7 +1,7 @@
 import { defineConfig } from 'rolldown';
 
 const entries = {
-  'hello': 'src/hello.js',
+  'hex': 'src/hex.js',
 }
 
 export default defineConfig({
