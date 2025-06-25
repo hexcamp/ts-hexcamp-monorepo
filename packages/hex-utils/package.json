@@ -5,13 +5,18 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rolldown -c rolldown.config.ts",
+    "test": "vitest"
   },
   "exports": {
-    ".": "./src/hello.js"
+    ".": "./dist/hello.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "devDependencies": {
+    "rolldown": "1.0.0-beta.19",
+    "vitest": "^3.2.4"
+  },
   "packageManager": "pnpm@10.12.3"
 }

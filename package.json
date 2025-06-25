@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "rolldown -c rolldown.config.ts",
+    "build": "pnpm -r --filter='./packages/**' run build",
     "test": "vitest"
   },
   "type": "module",
@@ -12,7 +12,6 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "rolldown": "1.0.0-beta.19",
     "vitest": "^3.2.4"
   }
 }

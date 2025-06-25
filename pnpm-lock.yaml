@@ -8,9 +8,6 @@ importers:
 
   .:
     devDependencies:
-      rolldown:
-        specifier: 1.0.0-beta.19
-        version: 1.0.0-beta.19
       vitest:
         specifier: ^3.2.4
         version: 3.2.4
@@ -21,7 +18,14 @@ importers:
         specifier: workspace:../hex-utils
         version: link:../hex-utils
 
-  packages/hex-utils: {}
+  packages/hex-utils:
+    devDependencies:
+      rolldown:
+        specifier: 1.0.0-beta.19
+        version: 1.0.0-beta.19
+      vitest:
+        specifier: ^3.2.4
+        version: 3.2.4
 
 packages:
 
