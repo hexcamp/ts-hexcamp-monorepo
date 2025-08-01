@@ -1,22 +1,14 @@
 #!/usr/bin/env node
 
-import { command, subcommands, run, string, positional } from 'cmd-ts';
-import { ehidToH3Hex } from '@hexcamp/hex-utils';
-
-const ehidToH3HexCmd = command({
-  name: 'ehid-to-h3-hex',
-  args: {
-    ehid: positional({ type: string, displayName: 'Encoded Hexagon ID' }),
-  },
-  handler: ({ ehid }) => {
-    console.log(ehidToH3Hex(ehid));
-  },
-});
+import { subcommands, run } from 'cmd-ts';
+import { ehidToH3HexCmd } from './ehidToH3Hex.js'
+import { ehidToDnsExplodedCmd } from './ehidToDnsExploded.js'
 
 const hexcampTool = subcommands({
   name: 'hexcamp-tool',
   cmds: { 
-    'ehid-to-h3-hex': ehidToH3HexCmd
+    'ehid-to-h3-hex': ehidToH3HexCmd,
+    'ehid-to-dns-exploded': ehidToDnsExplodedCmd
   },
 });
 
