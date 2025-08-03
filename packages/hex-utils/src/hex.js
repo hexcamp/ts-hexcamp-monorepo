@@ -1,6 +1,6 @@
 import base32 from 'base32.js'
 import { Buffer } from 'buffer'
-import { getBaseCellNumber, getResolution, h3IndexToSplitLong } from "h3-js";
+import { cellToChildren, getBaseCellNumber, getResolution, getRes0Cells, h3IndexToSplitLong } from "h3-js";
 
 export function ehidToH3Hex(ehid) {
   const decoder = new base32.Decoder({ type: 'rfc4648', lc: true })
@@ -10,12 +10,36 @@ export function ehidToH3Hex(ehid) {
   return padded
 }
 
+export function h3HexToEhid(h3Hex) {
+  if (!h3Hex) return ''
+  let trimmed = h3Hex.replace(/f*$/, '')
+  if (trimmed[0] !== '8') return 'Error'
+  if (trimmed.length % 2 === 0) {
+    trimmed += 'f'
+  }
+  const buf = Buffer.from(trimmed.slice(1), 'hex')
+  const encoder = new base32.Encoder({ type: 'rfc4648', lc: true })
+  const str = encoder.write(buf).finalize()
+  return str
+}
+
 export function ehidToDnsExploded(ehid) {
   const h3Hex = ehidToH3Hex(ehid)
   const res = getResolution(h3Hex);
   const base = getBaseCellNumber(h3Hex);
   const digits = getDigits(h3Hex, res);
   return digits.reverse().join('.') + '.' + base;
+}
+
+export function dnsExplodedToEhid(dnsExploded) {
+  const digits = dnsExploded.split('.').reverse();
+  const base = digits.shift();
+  let cell = getRes0Cells()[base];
+  for (const digit of digits) {
+    const res = getResolution(cell);
+    cell = cellToChildren(cell, res + 1)[digit];
+  }
+  return h3HexToEhid(cell);
 }
 
 // From https://observablehq.com/@nrabinowitz/h3-index-bit-layout?collection=@nrabinowitz/h3
