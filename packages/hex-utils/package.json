@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "build": "rolldown -c rolldown.config.ts",
-    "test": "vitest"
+    "test": "vitest",
+    "prepare": "husky"
   },
   "exports": {
     ".": "./dist/hex.js"
@@ -15,6 +16,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.4",
+    "prettier": "3.6.2",
     "rolldown": "1.0.0-beta.19",
     "vitest": "^3.2.4"
   },
@@ -23,5 +27,8 @@
     "base32.js": "^0.1.0",
     "buffer": "^6.0.3",
     "h3-js": "^4.2.1"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
   }
 }
