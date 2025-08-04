@@ -4,6 +4,7 @@ import { subcommands, run } from "cmd-ts";
 import { ehidToH3HexCmd } from "./ehidToH3Hex.js";
 import { h3HexToEhidCmd } from "./h3HexToEhid.js";
 import { ehidToDnsUnpackedCmd } from "./ehidToDnsUnpacked.js";
+import { dnsUnpackedToEhidCmd } from "./dnsUnpackedToEhid.js";
 
 const hexcampTool = subcommands({
   name: "hexcamp-tool",
@@ -11,6 +12,7 @@ const hexcampTool = subcommands({
     "ehid-to-h3-hex": ehidToH3HexCmd,
     "h3-hex-to-ehid": h3HexToEhidCmd,
     "ehid-to-dns-unpacked": ehidToDnsUnpackedCmd,
+    "dns-unpacked-to-ehid": dnsUnpackedToEhidCmd,
   },
 });
 

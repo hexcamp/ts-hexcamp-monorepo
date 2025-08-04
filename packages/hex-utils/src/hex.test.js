@@ -25,4 +25,5 @@ test("dns unpacked to ehid", () => {
   expect(dnsUnpackedToEhid("2.6.6.6.6.6.6.6.6.6.6.0.5.2.3.20")).toBe(
     "6kgvdnw3nwza",
   );
+  expect(dnsUnpackedToEhid("46")).toBe("axpq");
 });
