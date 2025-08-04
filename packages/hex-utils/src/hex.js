@@ -28,6 +28,9 @@ export function ehidToDnsUnpacked(ehid) {
   const res = getResolution(h3Hex);
   const base = getBaseCellNumber(h3Hex);
   const digits = getDigits(h3Hex, res);
+  if (digits.length == 0) {
+    return `${base}`
+  }
   return digits.reverse().join('.') + '.' + base;
 }
 

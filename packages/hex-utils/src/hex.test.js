@@ -11,6 +11,7 @@ test('h3 hex to ehid', () => {
 
 test('ehid to dns unpacked', () => {
   expect(ehidToDnsUnpacked('6kgvdnw3nwza')).toBe('2.6.6.6.6.6.6.6.6.6.6.0.5.2.3.20')
+  expect(ehidToDnsUnpacked('axpq')).toBe('46')
 })
 
 test('dns unpacked to ehid', () => {
