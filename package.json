@@ -1,6 +1,6 @@
 {
   "name": "ts-hexcamp-monorepo",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "index.js",
   "scripts": {
     "build": "pnpm -r --filter='./packages/**' run build",
