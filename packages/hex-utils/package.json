@@ -16,7 +16,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "husky": "^9.1.7",
     "lint-staged": "^16.1.4",
     "prettier": "3.6.2",
     "rolldown": "1.0.0-beta.19",
