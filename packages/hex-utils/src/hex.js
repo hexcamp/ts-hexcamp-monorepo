@@ -23,7 +23,7 @@ export function h3HexToEhid(h3Hex) {
   return str
 }
 
-export function ehidToDnsExploded(ehid) {
+export function ehidToDnsUnpacked(ehid) {
   const h3Hex = ehidToH3Hex(ehid)
   const res = getResolution(h3Hex);
   const base = getBaseCellNumber(h3Hex);
@@ -31,8 +31,8 @@ export function ehidToDnsExploded(ehid) {
   return digits.reverse().join('.') + '.' + base;
 }
 
-export function dnsExplodedToEhid(dnsExploded) {
-  const digits = dnsExploded.split('.').reverse();
+export function dnsUnpackedToEhid(dnsUnpacked) {
+  const digits = dnsUnpacked.split('.').reverse();
   const base = digits.shift();
   let cell = getRes0Cells()[base];
   for (const digit of digits) {
