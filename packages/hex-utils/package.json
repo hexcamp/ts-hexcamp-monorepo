@@ -1,6 +1,6 @@
 {
   "name": "@hexcamp/hex-utils",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "",
   "main": "index.js",
   "type": "module",
@@ -29,5 +29,10 @@
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hexcamp/ts-hexcamp-monorepo.git",
+    "directory": "packages/hex-utils"
   }
 }
